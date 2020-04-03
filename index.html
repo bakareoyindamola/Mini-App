@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marlians App</title>
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="page-banner">
+                <h1 id="title">HNG INTERNSHIP</h1>
+                <form action="" id="search-books">
+                    <input type="text" placeholder="Search books..."/>
+                </form>
+            </div>
+        </header>
+        <div id="book-list">
+            <h2 id="title">Start NG Courses</h2>
+            <ul>
+                <li>
+                    <span class="name">CSS, HTMl, JavaScript</span>
+                    <span class="delete">Remove</span>
+                </li>
+                <li>
+                    <span class="name">PHP</span>
+                    <span class="delete">Remove</span>
+                </li>
+                <li>
+                    <span class="name">NodeJs</span>
+                    <span class="delete">Remove</span>
+                </li>
+                <li>
+                    <span class="name">PYTHON</span>
+                    <span class="delete">Remove</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="hide">
+            <input type="checkbox" id="hide" />
+            <label for="hide">Hide Course(s)</label>
+        </div>
+
+        <form action="" id="add-book">
+            <input type="text" onfocus="this.value=''" placeholder="Add a book....."/>
+            <button>Add</button>
+        </form>
+
+    <script src="sandbox.js"></script>
+</body>
+</html>
