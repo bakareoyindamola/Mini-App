@@ -1,24 +1,24 @@
-const bookList = document.querySelector("#book-list ul");
+const courseList = document.querySelector("#course-list ul");
 
 // Delete Books
-bookList.addEventListener('click',  (e) => {
+courseList.addEventListener('click',  (e) => {
     if(e.target.className === "delete") {
         const li = e.target.parentNode;
-        bookList.removeChild(li);
+        courseList.removeChild(li);
     }
 });
 
 // Add Books
-const addBook = document.forms['add-book'];
+const addCourse = document.forms['add-course'];
 
-addBook.addEventListener('submit', (e) => {
+addCourse.addEventListener('submit', (e) => {
     e.preventDefault();
-    const bookName = addBook.querySelector('input').value;
+    const courseName = addCourse.querySelector('input').value;
     const li = document.createElement('li');
     const name = document.createElement('span');
     const deleteBtn = document.createElement('span');
 
-    name.textContent = bookName;
+    name.textContent = courseName;
     deleteBtn.textContent = "Remove";
 
     name.classList.add('name');
@@ -26,31 +26,31 @@ addBook.addEventListener('submit', (e) => {
 
     li.appendChild(name);
     li.appendChild(deleteBtn);
-    bookList.appendChild(li);
+    courseList.appendChild(li);
 });
 
 // Hide Books
-const hideBook = document.querySelector('#hide');
-hideBook.addEventListener('change', (e) => {
-    if(hideBook.checked) {
-        bookList.style.display = "none";
+const hideCourse = document.querySelector('#hide');
+hideCourse.addEventListener('change', (e) => {
+    if(hideCourse.checked) {
+        courseList.style.display = "none";
     } else {
-        bookList.style.display = "block";
+        courseList.style.display = "block";
     }
 });
 
 // Filter Books
-const searchBook = document.forms['search-books'].querySelector('input');
-searchBook.addEventListener('keyup', (e) => {
-    const searchName = searchBook.value.toLowerCase();
-    const bookName = document.querySelector('#book-list name');
-    const li = document.querySelectorAll('#book-list li');
-    li.forEach( (book) => {
-        const title = book.firstElementChild.textContent;
+const searchCourse = document.forms['search-courses'].querySelector('input');
+searchCourse.addEventListener('keyup', (e) => {
+    const searchName = searchCourse.value.toLowerCase();
+    const courseName = document.querySelector('#course-list name');
+    const li = document.querySelectorAll('#course-list li');
+    li.forEach( (course) => {
+        const title = course.firstElementChild.textContent;
         if( title.toLowerCase().indexOf( searchName ) > -1 ) {
-            book.style.display = "flex";
+            course.style.display = "flex";
         } else {
-            book.style.display = "none";
+            course.style.display = "none";
         }
     });
 })
